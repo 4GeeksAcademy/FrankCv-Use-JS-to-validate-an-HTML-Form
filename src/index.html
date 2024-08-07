@@ -10,20 +10,213 @@
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="boxicons.min.css" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div class="card text-start m-4">
+      <div class="card-header fs-3 fw-bold">
+        Payment form example
+      </div>
+      <div class="card-body fs-6 fw-bold">
+        <!-- Este contenedor permite ocupar todo el nacho -->
+        <div class="container-fluid">
+          <div class="row">
+            <!-- grid-12 para alerta -->
+            <div class="col-12 p-0" id="alertBox" style="display: none;">
+              <div
+                class="alert alert-danger ts-4 text-danger fw-bolder"
+                role="alert"
+              >
+                Some fields are missing
+              </div>
+            </div>
+
+            <div class="col-6 p-0">
+              <!-- Card #         -->
+              <div class="mb-3 text-start me-3 validator">
+                <label for="card" class="form-label">Card #</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="card"
+                  placeholder="XXXXXXXXXXXXXXXX"
+                />
+              </div>
+            </div>
+            <!-- CVC # -->
+            <div class="col-4 p-0">
+              <div class="mb-3 text-start me-3 validator">
+                <label for="cvc" class="form-label">CVC #</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cvc"
+                  placeholder="0000"
+                />
+              </div>
+            </div>
+
+            <!-- Amount -->
+            <div class="col-2 p-0 text-start validator">
+              <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+
+                <div class="input-group">
+                  <i class="bi bi-currency-dollar"></i>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="amount"
+                    placeholder="Amount"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- First Name -->
+            <div class="col-6 p-0">
+              <div class="mb-3 text-start me-3 validator">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" />
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-6 p-0">
+              <div class="mb-3 text-start validator">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" />
+              </div>
+            </div>
+
+            <!-- City -->
+            <div class="col-6 p-0">
+              <div class="mb-3 text-start me-3 validator">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" />
+              </div>
+            </div>
+
+            <!-- State -->
+            <div class="col-3 p-0 pe-2 text-start validator">
+              <label for="state" class="form-label">State</label>
+              <select
+                class="form-select form-control validator"
+                id="state"
+                aria-label="Default select example"
+              >
+                <option selected>Pick a state </option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <!-- Postal Code -->
+            <div class="col-3 p-0">
+              <div class="mb-3 text-start  validator">
+                <label for="postalCode" class="form-label">Postal Code</label>
+                <input type="text" class="form-control" id="postalCode" />
+              </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="col-6 p-0">
+              <div class="mb-3 text-start ">
+                <label for="payment" class="form-label">We accept:</label>
+                <div>
+                  <!-- Grupo de botones metodo de pago -->
+                  <div
+                    class="btn-group me-2 align-items-center"
+                    role="group"
+                    aria-label="First group"
+                  >
+                    <button type="button" class="btn btn-secondary">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="mastercard"
+                        value="mastercard"
+                      />
+                      <i class="fa-brands fa-cc-mastercard"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-secondary">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="visa"
+                        value="visa"
+                      />
+                      <i class="fa-brands fa-cc-visa"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="diners"
+                        value="diners"
+                      />
+                      <i class="fa-brands fa-cc-diners-club"></i>
+                    </button>
+                    <button type="button" class="btn btn-secondary">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="credit"
+                        value="credit"
+                      />
+                      <i class="bi bi-credit-card-2-front"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Input Message -->
+            <div class="col-6 mb-3 text-start p-0">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Message</label
+              >
+              <textarea
+                class="form-control validator"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+              <p class="fs-6 fw-light">Add any notes here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-end h-50">
+        <button class="btn-lg btn-secondary w-10" id="cancelButton">
+          Cancel
+        </button>
+        <button class="btn-lg btn-primary w-10" id="sendButton">Send</button>
       </div>
     </div>
+
+    <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8e9f6df98a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
